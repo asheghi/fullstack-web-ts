@@ -3,8 +3,8 @@
     "dev": "npm run server",
     "prod": "npm run build && npm run server:prod",
     "build": "vite build",
-    "server": "ts-node ./server",
-    "server:prod": "cross-env NODE_ENV=production ts-node ./server"
+    "server": "ts-node ./src",
+    "server:prod": "cross-env NODE_ENV=production ts-node ./src"
   },
   "dependencies": {
     "@types/compression": "^1.7.2",

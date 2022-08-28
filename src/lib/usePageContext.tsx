@@ -2,7 +2,7 @@
 // See https://vite-plugin-ssr.com/pageContext-anywhere
 
 import React, { useContext } from 'react'
-import type { PageContext } from './types'
+import type { PageContext } from '../renderer/types'
 
 export { PageContextProvider }
 export { usePageContext }
