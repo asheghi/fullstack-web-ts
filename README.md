@@ -13,7 +13,7 @@ starter project alternative to `next.js` build with [vite-ssr-plugin](https://vi
 
 
 ### Todo
- - [ ] add unit testing
+ - [x] add unit testing
  - [ ] add e2e testing
  - [ ] add file-based loading of /src/api files.
  - [ ] add next.js auth

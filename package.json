@@ -8,8 +8,9 @@
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx,json}'",
     "lint-fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "test": "ts-jest .",
-    "test-watch":"ts-jest . --watch"
+    "jest": "ts-jest .",
+    "jest-watch": "ts-jest . --watch",
+    "vites": "vites"
   },
   "dependencies": {
     "@types/compression": "^1.7.2",
@@ -30,6 +31,7 @@
     "vite-plugin-ssr": "^0.4.27"
   },
   "devDependencies": {
+    "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.8",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
@@ -43,9 +45,11 @@
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^29.0.1",
+    "jsdom": "^20.0.0",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
-    "ts-jest": "^28.0.8"
+    "ts-jest": "^28.0.8",
+    "vitest": "^0.22.1"
   }
 }
