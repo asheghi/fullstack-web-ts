@@ -5,15 +5,10 @@ export { Page }
 
 function Page() {
   return (
-    <>
-      <h1>Welcome</h1>
-      This page is:
-      <ul>
-        <li>Rendered to HTML.</li>
-        <li>
-          Interactive. <Counter />
-        </li>
-      </ul>
-    </>
+    <div className='h-screen flex flex-col gap-4 justify-center items-center'>
+      <h1 >Welcome</h1>
+      <p>Rendered to HTML.</p>
+      <Counter />
+    </div >
   )
 }
