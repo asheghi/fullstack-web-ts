@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageContextProvider } from '../lib/usePageContext'
-import type { PageContext } from './types'
+import type { PageContext } from '../types/page.types'
 
 export { PageShell }
 

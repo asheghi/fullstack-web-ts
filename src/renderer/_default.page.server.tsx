@@ -3,7 +3,7 @@ import React from 'react'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import logoUrl from './logo.svg'
-import type { PageContext } from './types'
+import type { PageContext } from '../types/page.types'
 import type { PageContextBuiltIn } from 'vite-plugin-ssr'
 
 export { render }
