@@ -1,13 +1,12 @@
-export type PageProps = {}
 // The `pageContext` that are available in both on the server-side and browser-side
 export type PageContext = {
-  Page: (pageProps: PageProps) => React.ReactElement
-  pageProps?: PageProps
-  urlPathname: string
+  Page: (pageProps: any) => React.ReactElement;
+  pageProps?: any;
+  urlPathname: string;
   exports: {
     documentProps?: {
-      title?: string
-      description?: string
-    }
-  }
-}
+      title?: string;
+      description?: string;
+    };
+  };
+};

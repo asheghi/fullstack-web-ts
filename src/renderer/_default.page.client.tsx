@@ -1,21 +1,21 @@
-import React from 'react'
-import { hydrateRoot } from 'react-dom/client'
-import { PageShell } from './PageShell'
-import type { PageContext } from '../types/page.types'
-import type { PageContextBuiltInClient } from 'vite-plugin-ssr/client'
-import '../assets/styles/indes.css';
-
-export { render }
+import React from "react";
+import { hydrateRoot } from "react-dom/client";
+import type { PageContextBuiltInClient } from "vite-plugin-ssr/client";
+import { PageShell } from "./PageShell";
+import type { PageContext } from "../types/page.types";
+import "../assets/styles/indes.css";
 
 async function render(pageContext: PageContextBuiltInClient & PageContext) {
-  const { Page, pageProps } = pageContext
+  const { Page, pageProps } = pageContext;
   hydrateRoot(
-    document.getElementById('page-view')!,
+    document.getElementById("page-view")!,
     <PageShell pageContext={pageContext}>
       <Page {...pageProps} />
     </PageShell>
-  )
+  );
 }
+
+export { render };
 
 /* To enable Client-side Routing:
 export const clientRouting = true
