@@ -3,6 +3,7 @@ import { hydrateRoot } from 'react-dom/client'
 import { PageShell } from './PageShell'
 import type { PageContext } from '../types/page.types'
 import type { PageContextBuiltInClient } from 'vite-plugin-ssr/client'
+import '../assets/styles/indes.css';
 
 export { render }
 

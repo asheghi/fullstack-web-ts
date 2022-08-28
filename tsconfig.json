@@ -4,8 +4,14 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ES2017",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": [
+      "vite/client"
+    ],
     "jsx": "react",
     "skipLibCheck": true,
     "esModuleInterop": true
