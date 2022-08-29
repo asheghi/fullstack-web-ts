@@ -3,32 +3,43 @@
 import express from "express";
 import compression from "compression";
 import { renderPage } from "vite-plugin-ssr";
+import { ApiHandler } from "./lib/api-handler.middleware";
+import { exposeSession } from "./lib/session-utils";
 
 const isProduction = process.env.NODE_ENV === "production";
-const root = `${__dirname}/..`;
+export const rootDir = `${__dirname}/..`;
 
 async function startServer() {
   const app = express();
+
+  app.use("/api", ApiHandler);
 
   app.use(compression());
 
   if (isProduction) {
     const sirv = require("sirv");
-    app.use(sirv(`${root}/dist/client`));
+    app.use(sirv(`${rootDir}/dist/client`));
   } else {
     const vite = require("vite");
     const viteDevMiddleware = (
       await vite.createServer({
-        root,
+        root: rootDir,
         server: { middlewareMode: "ssr" },
       })
     ).middlewares;
     app.use(viteDevMiddleware);
   }
 
+  // authenticate all pages on the server-side.
+  app.use(exposeSession);
+
   app.get("*", async (req, res, next) => {
+    const { session, csrf, callbackUrl } = req as any;
     const pageContextInit = {
       urlOriginal: req.originalUrl,
+      session,
+      csrf,
+      callbackUrl,
     };
     const pageContext = await renderPage(pageContextInit);
     const { httpResponse } = pageContext;

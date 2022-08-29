@@ -9,4 +9,7 @@ export type PageContext = {
       description?: string;
     };
   };
+  session?: any;
+  csrfToken?: string;
+  callbackUrl?: string;
 };

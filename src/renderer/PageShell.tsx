@@ -1,3 +1,4 @@
+import { SessionProvider } from "next-auth/react";
 import React from "react";
 import { PageContextProvider } from "../lib/usePageContext";
 import type { PageContext } from "../types/page.types";
@@ -12,7 +13,9 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        {children}
+        <SessionProvider session={pageContext.session}>
+          {children}
+        </SessionProvider>
       </PageContextProvider>
     </React.StrictMode>
   );
