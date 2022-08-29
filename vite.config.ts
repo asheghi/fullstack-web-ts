@@ -3,6 +3,7 @@ import ssr from "vite-plugin-ssr/plugin";
 import { UserConfig, loadEnv } from "vite";
 
 export default function defineConfig(arg: any) {
+  const env = loadEnv(arg.mode, process.cwd(), "");
   const config: UserConfig = {
     plugins: [react(), ssr()],
     test: {
