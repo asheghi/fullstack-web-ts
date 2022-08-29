@@ -7,7 +7,13 @@ import logoUrl from "./logo.svg";
 import type { PageContext } from "../types/page.types";
 
 // See https://vite-plugin-ssr.com/data-fetching
-export const passToClient = ["pageProps", "urlPathname"];
+export const passToClient = [
+  "pageProps",
+  "urlPathname",
+  "session",
+  "csrfToken",
+  "callbackUrl",
+];
 
 async function render(pageContext: PageContextBuiltIn & PageContext) {
   const { Page, pageProps } = pageContext;

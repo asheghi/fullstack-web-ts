@@ -15,7 +15,9 @@ starter project alternative to `next.js` build with [vite-ssr-plugin](https://vi
 ### Todo
  - [x] add unit testing
  - [ ] add e2e testing
- - [ ] add file-based loading of /src/api files.
- - [ ] add next.js auth
+ - [x] add file-based loading of /src/api files.
+ - [x] add next.js auth
  - [ ] add trpc 
  - [ ] add prisma
+ - [ ] add next-auth prisma provider
+ - [ ] improve next-auth integration
