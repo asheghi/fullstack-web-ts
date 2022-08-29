@@ -1,0 +1,7 @@
+.header {
+    @apply text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-700 font-extrabold;
+}
+
+.btn {
+    @apply bg-blue-600 text-white rounded px-2 py-1 text-sm;
+}

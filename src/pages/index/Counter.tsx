@@ -8,7 +8,7 @@ function Counter() {
       type="button"
       onClick={() => setCount(() => count + 1)}
     >
-      Counter {count}
+      Reactive Counter {count}
     </button>
   );
 }
