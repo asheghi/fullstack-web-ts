@@ -3,7 +3,6 @@
 import express from "express";
 import compression from "compression";
 import { renderPage } from "vite-plugin-ssr";
-import { PrismaClient } from "@prisma/client";
 import { ApiHandler } from "./lib/api-handler.middleware";
 import { exposeSession } from "./lib/session-utils";
 
