@@ -32,6 +32,7 @@ const exposeSessionHandler = async (
   res: Response,
   next: NextFunction
 ) => {
+  if (req.originalUrl.startsWith("/api/auth")) return next();
   try {
     const options = req.headers.cookie
       ? { headers: { cookie: req.headers.cookie } }
@@ -52,9 +53,8 @@ const exposeSessionHandler = async (
     req.callbackUrl = callbackUrl;
   } catch (e) {
     console.error(e);
-  } finally {
-    next();
   }
+  return next();
 };
 app.use(cookieParser());
 app.use(exposeSessionHandler);

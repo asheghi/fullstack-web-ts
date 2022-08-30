@@ -12,6 +12,9 @@ export const rootDir = `${__dirname}/..`;
 async function startServer() {
   const app = express();
 
+  // authenticate all requests
+  app.use(exposeSession);
+
   app.use("/api", ApiHandler);
 
   app.use(compression());
@@ -29,9 +32,6 @@ async function startServer() {
     ).middlewares;
     app.use(viteDevMiddleware);
   }
-
-  // authenticate all pages on the server-side.
-  app.use(exposeSession);
 
   app.get("*", async (req, res, next) => {
     const { session, csrf, callbackUrl } = req as any;
