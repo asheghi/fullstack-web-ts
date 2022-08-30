@@ -10,6 +10,9 @@ starter project alternative to `next.js` build with [vite-ssr-plugin](https://vi
  - UI library agnostic
  - 100% typescript
  - eslint + prettier
+ - next-auth
+ - telefunc (tRPC alternative)
+ - jest + vitest
 
 
 ### Todo
@@ -17,7 +20,6 @@ starter project alternative to `next.js` build with [vite-ssr-plugin](https://vi
  - [ ] add e2e testing
  - [x] add file-based loading of /src/api files.
  - [x] add next.js auth
- - [ ] add trpc 
  - [ ] add prisma
  - [ ] add next-auth prisma provider
  - [ ] improve next-auth integration

@@ -7,9 +7,12 @@ function Page() {
   const { data: session } = useSession();
   const haveSession = session && session.user;
   return (
-    <div className="h-screen flex flex-col gap-4 justify-center items-center">
+    <div className="h-screen flex flex-col gap-8 justify-center items-center">
       <h1 className="header">FullStack Web Framework</h1>
-      <Counter />
+      <div className="flex gap-8 items-center">
+        <Counter />
+        <a href="/todos">Todos</a>
+      </div>
       {haveSession && (
         <div>
           Logged in as {session.user?.name}
