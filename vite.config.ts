@@ -17,6 +17,8 @@ export default function defineConfig(arg: any) {
       process: {
         env: {
           NEXTAUTH_URL: env.NEXTAUTH_URL,
+          APP_TITLE: env.APP_TITLE,
+          APP_DESCRIPTION: env.APP_DESCRIPTION,
         },
       },
     },

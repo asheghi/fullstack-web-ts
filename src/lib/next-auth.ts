@@ -18,6 +18,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
  */
 
 const router = Router();
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 global.Request = Object;
@@ -32,7 +33,9 @@ export default function NextAuthMiddleware(options: NextAuthOptions) {
       if (req.method !== "POST" && req.method !== "GET") {
         return next();
       }
+
       const query = req.path.split("/").slice(1);
+
       req.query.nextauth = query;
 
       return NextAuth(req, res, options);

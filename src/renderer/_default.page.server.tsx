@@ -1,9 +1,9 @@
 import ReactDOMServer from "react-dom/server";
 import React from "react";
-import { escapeInject, dangerouslySkipEscape } from "vite-plugin-ssr";
+import { dangerouslySkipEscape, escapeInject } from "vite-plugin-ssr";
 import type { PageContextBuiltIn } from "vite-plugin-ssr";
 import { PageShell } from "./PageShell";
-import logoUrl from "./logo.svg";
+import logoUrl from "./logo.png";
 import type { PageContext } from "../types/page.types";
 
 // See https://vite-plugin-ssr.com/data-fetching
@@ -25,10 +25,12 @@ async function render(pageContext: PageContextBuiltIn & PageContext) {
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports;
-  const title = (documentProps && documentProps.title) || "Vite SSR app";
+  const title =
+    (documentProps && documentProps.title) || process.env.APP_TITLE || "";
   const desc =
     (documentProps && documentProps.description) ||
-    "App using Vite + vite-plugin-ssr";
+    process.env.APP_DESCRIPTION ||
+    "";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">

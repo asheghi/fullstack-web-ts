@@ -1,7 +1,43 @@
-.header {
-    @apply text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-700 font-extrabold;
-}
+.IndexPage {
+  @apply h-screen flex flex-col gap-8 justify-center items-center;
 
-.btn {
-    @apply bg-blue-600 text-white rounded px-2 py-1 text-sm;
+  .btn {
+    @apply bg-blue-500 text-white px-2 py-1 rounded shadow;
+  }
+  main {
+    @apply container mx-auto flex flex-col items-center justify-center min-h-screen p-4;
+  }
+
+  .header-text {
+    @apply text-5xl md:text-[5rem] leading-normal font-extrabold  bg-clip-text text-transparent bg-gradient-to-l from-blue-500 to-sky-500;
+  }
+  .technologies {
+    @apply grid gap-4 pt-3 mt-3 text-center md:grid-cols-3 lg:w-2/3;
+
+    .card {
+      @apply flex flex-col justify-center py-4 px-2 gap-1 border border-gray-100 rounded-lg shadow transition;
+      // &:hover {
+      //   @apply motion-safe:hover:scale-105 shadow-lg;
+      //   .name {
+      //     @apply text-sky-600;
+      //   }
+      // }
+      .name {
+        @apply transition text-2xl text-sky-800 font-bold;
+      }
+      .description {
+        @apply text-gray-600 text-lg;
+      }
+      .link {
+        @apply text-sm text-blue-500 no-underline decoration-dotted underline-offset-2;
+      }
+    }
+  }
+
+  .demos {
+    @apply flex flex-col gap-4;
+    .feat {
+      @apply py-2 border rounded border-gray-200 p-4;
+    }
+  }
 }
