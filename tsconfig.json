@@ -15,7 +15,7 @@
     ],
     "jsx": "react",
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "ts-node": {
     "transpileOnly": true,

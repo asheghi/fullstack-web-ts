@@ -5,6 +5,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import fetch, { Headers, Request, Response } from "node-fetch";
 import dotenv from "dotenv";
 import { join } from "path";
+// @ts-ignore
 import { PrismaClient } from "@prisma/client";
 import NextAuth from "../lib/next-auth";
 

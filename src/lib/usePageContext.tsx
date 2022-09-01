@@ -16,8 +16,9 @@ function PageContextProvider({
   return <Context.Provider value={pageContext}>{children}</Context.Provider>;
 }
 
-function usePageContext() {
+function usePageContext(): PageContext {
   const pageContext = useContext(Context);
+
   return pageContext;
 }
 

@@ -11,6 +11,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
+    "stylelint",
   ],
   overrides: [],
   parser: "@typescript-eslint/parser",
@@ -26,5 +27,20 @@ module.exports = {
     "import/extensions": 0,
     "import/no-unresolved": 0,
     "import/no-extraneous-dependencies": 0,
+    "sort-imports": 0,
+    "node/no-missin-import": 0,
+    "node/no-unpublished-import": 0,
+    "node/no-missing-import": [
+      "error",
+      {
+        // "allowModules": [],
+        // "resolvePaths": ["/path/to/a/modules/directory"],
+        tryExtensions: [".js", ".json", ".node", ".ts", ".tsx"],
+      },
+    ],
+  },
+  globals: {
+    __dirname: true,
+    module: true,
   },
 };

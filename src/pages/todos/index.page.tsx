@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {
+  TodoItem,
   onNewTodo,
   removeTodo,
-  TodoItem,
   toggleStatus,
 } from "./todos.telefunc";
 
@@ -12,17 +12,20 @@ const Page = (props: any) => {
 
   const handleAdd = async () => {
     const { todoItems } = await onNewTodo({ text: inputText });
+
     setInputText("");
     setTodos(todoItems);
   };
 
   const handleSwitchStatus = async (todo: TodoItem) => {
     const { todoItems } = await toggleStatus(todo.id);
+
     setTodos(todoItems);
   };
 
   const handleDelete = async (todo: TodoItem) => {
     const { todoItems } = await removeTodo(todo.id);
+
     setTodos(todoItems);
   };
 

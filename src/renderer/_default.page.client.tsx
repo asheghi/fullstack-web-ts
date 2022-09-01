@@ -11,6 +11,7 @@ telefuncConfig.telefuncUrl = "/api/_telefunc";
 
 async function render(pageContext: PageContextBuiltInClient & PageContext) {
   const { Page, pageProps } = pageContext;
+
   hydrateRoot(
     document.getElementById("page-view")!,
     <PageShell pageContext={pageContext}>

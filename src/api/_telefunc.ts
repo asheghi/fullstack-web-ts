@@ -1,4 +1,4 @@
-import { telefunc, provideTelefuncContext, telefuncConfig } from "telefunc";
+import { provideTelefuncContext, telefunc, telefuncConfig } from "telefunc";
 import express, { Request, Response } from "express";
 import { Session } from "next-auth";
 // todo move this back to /api directory when changing url was possible
@@ -13,6 +13,7 @@ const middleWare: any = async (
   res: Response
 ) => {
   const { session } = req;
+
   provideTelefuncContext({ session });
 
   const httpResponse = await telefunc({
@@ -21,9 +22,11 @@ const middleWare: any = async (
     body: req.body,
   });
   const { body, statusCode, contentType } = httpResponse;
+
   res.status(statusCode).type(contentType).send(body);
 };
 
 app.use(middleWare);
 const telefuncMiddleware = app;
+
 export default telefuncMiddleware;

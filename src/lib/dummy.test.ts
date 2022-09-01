@@ -6,6 +6,7 @@ describe("dummy test", () => {
       it("should return sum", () => {
         const a = 80;
         const b = 5;
+
         expect(sum(a, b)).toBe(a + b);
       });
     });

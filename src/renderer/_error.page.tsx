@@ -9,6 +9,7 @@ function Page({ is404 }: { is404: boolean }) {
       </>
     );
   }
+
   return (
     <>
       <h1>500 Internal Server Error</h1>
