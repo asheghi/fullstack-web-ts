@@ -21,3 +21,5 @@ starter project alternative to `next.js` build with [vite-ssr-plugin](https://vi
 
 - [ ] add e2e testing
 - [ ] improve next-auth integration
+- [ ] add chading mechanism
+- [ ] impove page props
