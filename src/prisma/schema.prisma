@@ -5,7 +5,7 @@ datasource db {
 }
 
 generator client {
-    provider        = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 model Account {
@@ -43,6 +43,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    role          String?
 }
 
 model VerificationToken {

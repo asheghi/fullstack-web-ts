@@ -52,4 +52,15 @@ export default NextAuth({
   adapter: PrismaAdapter(prisma),
   providers,
   secret: process.env.JWT_SECRET,
+  callbacks: {
+    async session({ session, user }) {
+      if (session && session.user && user) {
+        // @ts-ignore
+        // eslint-disable-next-line no-param-reassign
+        session.user.role = user.role; // Add role value to user object so it is passed along with session
+      }
+
+      return session;
+    },
+  },
 });
